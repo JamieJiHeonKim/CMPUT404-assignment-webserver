@@ -57,11 +57,7 @@ class MyWebServer(socketserver.BaseRequestHandler):
             if os.path.isdir("/www" + file_name):
                 url = file_name + "index.html"
             content_type = url.split(".")[-1]
-            if content_type == "css":
-                content_type = "css"
-                self.page_200(url, content_type)
-            else:
-                self.page_200(url, content_type)
+            self.page_200(url, content_type)
 
         # handles different requests
         else:
